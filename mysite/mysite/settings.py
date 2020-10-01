@@ -37,16 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'category',
     'article',
     'ckeditor',
+
 ]
 
 
-CKEDITOR_CONFIGS = {
-    'default':{
-        'height':500,
-    }
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

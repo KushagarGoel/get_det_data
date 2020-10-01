@@ -8,4 +8,4 @@ def yo(request):
     obj = Editor.objects.all()
     if form.is_valid():
         form.save()
-    return render(request,'article/yo.html',{'form':form, 'obj':obj})
+    return render(request,'article/yo.html',{})
