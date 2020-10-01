@@ -6,5 +6,5 @@ User = get_user_model()
 class UserAddressForm(forms.ModelForm):
     class Meta:
         model = Editor
-        fields = ['article_data']
+        fields = ['title','article_data', 'category_selected','project_link',]
 

@@ -3,7 +3,10 @@ from .models import Editor, Comment
 # Register your models here.
 
 class EditorAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('title',)}
+    date_hierarchy = 'timestamp'
+    list_display = ['title', 'active','updated']
+    readonly_fields = ['updated', 'timestamp']
+
 
     class Meta:
         model = Editor

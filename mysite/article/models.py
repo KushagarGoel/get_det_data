@@ -12,13 +12,9 @@ class Editor(models.Model):
     article_data = RichTextField(null=True, blank=True)
     category_selected = models.ManyToManyField(Category)
     project_link = models.CharField(max_length=200, null=True, blank=True)
-    slug = models.SlugField(unique=True)
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-
-    class Meta:
-        unique_together = ('title','slug')
 
 
     def __str__(self):
