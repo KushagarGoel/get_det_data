@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'common.css' %}">
+</head>
+<body>
+<div class="container-fluid sticky-top">
+	<div class="row">
+		<div class="col-sm-4 bg-logo">
+			<div class="m-auto text-center p-1">
+				<img src="{% static 'logo.png' %}" width="300" id="logo" class="img-fluid m-auto">
+			</div>
+		</div>
+		<div class="col-sm-8 bg-navlinks">
+			<div class="m-auto h-100">
+				<nav class="navbar m-auto h-100 navbar-expand-lg">
+					<div class="container">
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
+
+					  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+					    <ul class="navbar-nav navbar-right">
+					      <li class="nav-item active">
+					        <a class="nav-link" href="">Orders</a>
+					      </li>
+					        <li class="nav-item active">
+					        <a class="nav-link" href="">All Artists</a>
+					      </li>
+					        <li class="nav-item active">
+					        <a class="nav-link" href="">Cart <span class="badge badge-dark">{% if not request.session.items_total %} 0 {% else %} {{request.session.items_total}} {% endif %}</span> <span class="sr-only">(current)</span></a>
+					      </li>
+					          {% if user.is_authenticated %}
+					      <li class="nav-item dropdown">
+					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Dropdown link
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					          <a class="dropdown-item" href="">Account</a>
+					          <a class="dropdown-item" href="">Logout</a>
+					        </div>
+					      </li>
+
+					        {% else %}
+
+					         <li class="nav-item dropdown">
+					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Dropdown link
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					          <a class="dropdown-item" href="">Login</a>
+					          <a class="dropdown-item" href="">Register</a>
+					        </div>
+					      </li>
+					        {% endif %}
+					    </ul>
+
+					  </div>
+					     <form class="form-inline" action="/s/">
+					      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+					      <button class="btn search my-2 my-sm-0" type="submit">Search</button>
+					    </form>
+					</div>
+				</nav>
+			</div>
+		</div>	
+	</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% block content %}
+{% endblock %}
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+
+logo = document.getElementById("logo")
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+console.log(logo)
+
+
+function scrollFunction() {
+  if (document.documentElement.scrollTop < 100) {
+    logo.style.width = 300-document.documentElement.scrollTop+"px";
+  } else {
+
+  }
+}
+
+</script>
+</html>
