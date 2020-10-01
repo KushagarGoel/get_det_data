@@ -1,0 +1,10 @@
+from django import forms
+from django.contrib.auth import get_user_model
+from .models import Editor
+User = get_user_model()
+
+class UserAddressForm(forms.ModelForm):
+    class Meta:
+        model = Editor
+        fields = ['arti']
+

@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-
+<form method="POST" action="">{% csrf_token %}
+{{form.media}}
+{{form.as_p}}
+    <button type="submit">Submit</button>
+    </form>
+{% for i in obj %}
+{{i|safe}} <br>
+{% endfor %}
 </body>
 </html>
