@@ -1,12 +1,40 @@
+body{
+	font-family: 'Balsamiq Sans', cursive;
+}
+
 .bg-logo{
 	background: #FF8D27;
 }
 
+.h-100vh{
+	height: 100vh;
+}
+
+.tag-1{
+	color: white;
+	font-size: 30px;
+	font-family: 'Rubik Mono One', sans-serif;
+}
+.carousel-cell {
+  width: 100%;
+  border-radius: 0px;
+}
 
 .bg-navlinks{
+	background: white;
+}
+
+.bg-body{
+	background: #ff8d27;
+}
+
+.bg-body-match{
 	background: #3e3b3b;
 }
 
+.nav-bor{
+    border-bottom: 1px solid #e2c9c9;
+}
 
 .h-100{
 	height: 100%;
@@ -20,9 +48,16 @@
 	border-radius: 10px;
 	padding: 6px;
 	margin-right: 6px;
-	box-shadow: 0px 0px 10px #8c7d49;
+	/*box-shadow: 0px 0px 3px #8c7d49;*/
 	transition: all ease-in-out .2s;
 }
+
+.srch{
+	width: 10px !important;
+	border-radius: 10px 0px 0px 10px;
+	transition: all ease-in-out .2s;
+}
+
 
 .nav-link:hover{
 	background: #FF8D27 !important;
@@ -30,5 +65,17 @@
 }
 
 .search{
-	background: #FF8D27;	
+	background: #3e3b3b;
+	color: white;	
+	border-radius: 0px 10px 10px 0px;
+}
+
+.search:hover{
+	background: #3e3b3b;
+	color: white;	
+}
+
+
+.sf:hover .srch{
+	width: 200px !important;
 }
