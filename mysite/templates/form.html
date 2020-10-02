@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="">{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">{% if btn %}{{btn}}{% else %}Submit{% endif %}</button>
+    </form>
+    {% if btn == "Register" %}
+    Already have an acoount <a href="{% url 'auth_login' %}">login</a>
+    {% else %}
+    Don't have an account <a href="{% url 'auth_register' %}">Register</a>
+    {% endif %}
+</div>
+{% endblock %}

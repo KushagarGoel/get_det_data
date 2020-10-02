@@ -1,27 +1,33 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 from django.contrib.auth import get_user_model
 from category.models import Category
 # Create your models here.
 
 User = get_user_model()
-
-class Editor(models.Model):
+# Create your models here.
+class Dataset(models.Model):
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200, unique=True)
-    article_data = RichTextField(null=True, blank=True)
+    title = models.CharField(max_length=100, unique=True)
     category_selected = models.ManyToManyField(Category)
-    project_link = models.CharField(max_length=200, null=True, blank=True)
     active = models.BooleanField(default=True)
+    featured = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-
-
 
     def __str__(self):
         return self.title
 
-class Comment(models.Model):
+
+class Contributor(models.Model):
+    def get_upload_path(self,filename):
+        return '{0}/{1}'.format(self.dataset_name.title, filename)
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
-    comment_desc = models.TextField(null=False, blank=False)
-    article_id = models.ForeignKey(Editor, on_delete=models.CASCADE)
+    dataset_name = models.ForeignKey(Dataset, on_delete=models.CASCADE)
+    file = models.FileField(upload_to=get_upload_path, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    def __str__(self):
+        return self.dataset_name.title
+
+
+

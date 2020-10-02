@@ -11,6 +11,9 @@ class Category(models.Model):
     category_name = models.CharField(max_length=100)
     active_fields = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.category_name
+
 class RequesteCategory(models.Model):
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     requested_cat = models.CharField(max_length=100)
