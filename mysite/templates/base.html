@@ -4,11 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Courier+Prime:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'common.css' %}">
 </head>
-<body>
-<div class="container-fluid sticky-top">
+<body class="">
+<div class="container-fluid nav-bor sticky-top">
 	<div class="row">
 		<div class="col-sm-4 bg-logo">
 			<div class="m-auto text-center p-1">
@@ -32,7 +42,8 @@
 					        <a class="nav-link" href="">All Artists</a>
 					      </li>
 					        <li class="nav-item active">
-					        <a class="nav-link" href="">Cart <span class="badge badge-dark">{% if not request.session.items_total %} 0 {% else %} {{request.session.items_total}} {% endif %}</span> <span class="sr-only">(current)</span></a>
+					        <a class="nav-link" href="">Cart 
+					        </a>
 					      </li>
 					          {% if user.is_authenticated %}
 					      <li class="nav-item dropdown">
@@ -60,9 +71,9 @@
 					    </ul>
 
 					  </div>
-					     <form class="form-inline" action="/s/">
-					      <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
-					      <button class="btn search my-2 my-sm-0" type="submit">Search</button>
+					     <form class="form-inline sf" action="/s/">
+					      <input class="form-control srch" type="search" name="q" placeholder="Search" aria-label="Search">
+					      <button class="btn search my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
 					    </form>
 					</div>
 				</nav>
@@ -70,14 +81,65 @@
 		</div>	
 	</div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+<div class="main-carousel h-100vh"  data-flickity='{ "selectedAttraction": 0.01,
+"friction": 0.15, "cellAlign": "left","prevNextButtons": false , "autoPlay": true, "wrapAround": true, "pageDots": false }'>
+  	<div class="carousel-cell bg-white h-100 rounded">
+		<div class="container-fluid h-100">
+			<div class="row h-100">
+				<div class="bg-body-match col-sm-8 h-100">
+					<div class="p-5">
+						<div class="m-auto">
+							<h3 class="tag-1">Cool Website for Cool Machile Learners and Teachers Out there.........:)</h3>
+						</div>
+					</div>
+				</div>
+				<div class="bg-body col-sm-4 h-100">
+
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="carousel-cell bg-white h-100 rounded">
+		<div class="container-fluid h-100">
+			<div class="row h-100">
+				<div class="bg-body col-sm-8 h-100">
+					<h1>Hello</h1>
+				</div>
+				<div class="bg-white col-sm-4 h-100">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="carousel-cell bg-white h-100 rounded">
+		<div class="container-fluid h-100">
+			<div class="row h-100">
+				<div class="bg-white col-sm-8 h-100">
+					<h1>Hello</h1>
+				</div>
+				<div class="bg-body col-sm-4 h-100">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="carousel-cell bg-white h-100 rounded">
+		<div class="container-fluid h-100">
+			<div class="row h-100">
+				<div class="bg-body col-sm-8 h-100">
+					<h1>Hello</h1>
+				</div>
+				<div class="bg-body col-sm-4 h-100">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 {% block content %}
@@ -97,10 +159,10 @@ console.log(logo)
 
 
 function scrollFunction() {
-  if (document.documentElement.scrollTop < 100) {
-    logo.style.width = 300-document.documentElement.scrollTop+"px";
+  if (document.documentElement.scrollTop > 100) {
+    logo.style.width = "250px";
   } else {
-
+  	logo.style.width = "300px";
   }
 }
 

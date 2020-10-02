@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
+
 	<form method="POST" action="">{% csrf_token %}
 	{{form.media}}
 	{{form.as_p}}
@@ -8,4 +10,5 @@
 	{% for i in obj %}
 		{{i|safe}} <br>
 	{% endfor %}
+</div>
 {% endblock %}
