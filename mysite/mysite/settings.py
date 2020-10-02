@@ -26,9 +26,23 @@ SECRET_KEY = 'dg@nnzquq!c+b0l3(@nu)y9xhl10ntl!)@&=temp-hy@mkrfb8'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+DEFAULT_FROM_EMAIL = "Soft Fuel <projecthospital98@gmail.com>"
 
+
+#EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'projecthospital98@gmail.com'
+EMAIL_HOST_PASSWORD = 'Btechfirst-1'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_PORT = 587
 
 # Application definition
+
+if DEBUG:
+    SITE_URL = "http://127.0.0.1:8000"
+else:
+    SITE_URL = "site-url-here"
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,6 +54,7 @@ INSTALLED_APPS = [
     'category',
     'article',
     'ckeditor',
+    'accounts',
 
 ]
 

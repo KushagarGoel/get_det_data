@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="col-sm-4 bg-logo">
 			<div class="m-auto text-center p-1">
-				<img src="{% static 'logo.png' %}" width="300" id="logo" class="img-fluid m-auto">
+				<img src="{% static 'logo.png' %}" width="250" id="logo" class="img-fluid m-auto">
 			</div>
 		</div>
 		<div class="col-sm-8 bg-navlinks">
@@ -70,16 +70,19 @@
 		</div>	
 	</div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}  alert-{{ message.tags }} {% endif %} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+      {% endfor %}
+    {% endif %}
+</div>
 {% block content %}
 {% endblock %}
 </body>
@@ -97,12 +100,13 @@ console.log(logo)
 
 
 function scrollFunction() {
-  if (document.documentElement.scrollTop < 100) {
-    logo.style.width = 300-document.documentElement.scrollTop+"px";
+  if (document.documentElement.scrollTop > 100) {
+    logo.style.width = "200px";
   } else {
-
+  	logo.style.width = "250px";
   }
 }
+
 
 </script>
 </html>
