@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'article',
     'ckeditor',
     'accounts',
+    'dataset',
 
 ]
 
