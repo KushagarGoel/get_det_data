@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Contributor, Dataset
+from .models import Contributor, Dataset, ContributrFolder
 
 
 def upload(request):
@@ -18,8 +18,17 @@ def upload(request):
 	            		)
 	            	)
 
-            Contributor.objects.bulk_create(ls)
-            print(updatedImages, request.FILES)
+            yo = Contributor.objects.bulk_create(ls)
+            user_is, created = ContributrFolder.objects.get_or_create(username = request.user)
+            if created:
+                user_is.file_count =  len(yo)
+                user_is.save()
+            else:
+                user_is.file_count = str(len(yo)+int(user_is.file_count))
+                user_is.save()
+
+
+
 
             return render(request, 'dataset/upload.html', {'text': 'uploaded'})
     return render(request, 'dataset/upload.html', {'text':'Select Folder Upload Multiple Photos'})
