@@ -1,7 +1,0 @@
-/venv/
-/static/static_root/
-/mysite/article/migrations/
-/mysite/accounts/migrations/
-/mysite/category/migrations/
-/mysite/dataset/migrations/
-/mysite/db.sqlite3
