@@ -1,5 +1,6 @@
 body{
 	font-family: 'Balsamiq Sans', cursive;
+	background: #e8b98e14;
 }
 
 .bg-logo{
@@ -7,7 +8,92 @@ body{
 }
 
 .h-100vh{
+	height: 50vh;
+}
+.h-150vh{
 	height: 100vh;
+}
+
+.line-4-sty{
+	height: 10px;
+	background: #3e3b3b;
+	margin-top: 100px;
+	animation: blink infinite 30s;
+
+}
+
+
+@keyframes blink {
+  0% { width:100%; }
+  25% {  width:0%; }
+  50% {  width:100%; }
+  75% {  width:0%; }
+  100% { width:100%; }
+
+}
+
+.line-2-sty{
+	height: 10px;
+	background: #ff8d27;
+	margin-top: 100px;
+	animation: blink2 infinite 30s;
+
+}
+
+@keyframes blink2 {
+  0% { width:0%; }
+  25% {  width:100%; }
+  50% {  width:0%; }
+  75% {  width:100%; }
+  100% { width:0%; }
+}
+
+.btn-login{
+	background: #ff8d27;
+	color: white;
+}
+
+.btn-login:hover{
+	color: white
+}
+
+.accounts .nav-item{
+	width: 100px;
+}
+
+.accounts input{
+	border: 0;
+    border-bottom: 1px solid #888585;
+    padding: 3px;
+}
+
+
+.w-max{
+	width: max-content;
+}
+.accounts .nav-item{
+	transition: all .3s;
+}
+.accounts .nav-item:hover{
+
+	transform: scale(1.1);
+}
+
+.mt-100{
+	margin-top: 150px;
+}
+
+.nav-account{
+	color: black;
+	padding: 6px;
+	transition: all ease .3s;
+	margin-right: auto;
+}
+
+
+.nav-account:hover{
+	text-decoration: none;
+	color: black;
 }
 
 .tag-1{

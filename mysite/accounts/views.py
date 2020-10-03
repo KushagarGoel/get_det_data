@@ -39,7 +39,7 @@ def registration_view(request):
         messages.success(request,"Registered Successfully, Please confirm your email")
         return HttpResponseRedirect("/")
     context = {"form": form, 'btn':btn}
-    return render(request, "form.html",context)
+    return render(request, "form2.html",context)
 
 SHA1_RE = re.compile('^[0-9a-f]{40}$')
 

@@ -14,17 +14,23 @@
 	    				<td class="accounts">{{form.username}}</td>
 	    			</tr>
 	    			<tr>
-	    				<td class="accounts">{{form.password}}</td>
+	    				<td class="accounts">{{form.email}}</td>
+	    			</tr>
+	    			<tr>
+	    				<td class="accounts">{{form.password1}}</td>
+	    			</tr>
+	    			<tr>
+	    				<td class="accounts" placeholder="hdaskjhk">{{form.password2}}</td>
 	    			</tr>
 	    		</tbody>
 	    	</table>
 	        <button type="submit" class="btn btn-login mt-3 mb-4">{% if btn %}{{btn}}{% else %}Submit{% endif %}</button>
-		    <i>Don't have an account <a href="{% url 'auth_register' %}">Register</a></i>
+		    <i>Already have an account <a href="{% url 'auth_login' %}">login</a></i>
 	    </form>
 	</div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid run">
 	<div class="row">
 		<div class="line-4-sty">
 		</div>
@@ -32,8 +38,6 @@
 		</div>
 	</div>
 </div>
-
-
 
 
 
