@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+	path('contribute/', views.upload, name="contribute"),
 ]
 
 

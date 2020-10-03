@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+	
+
+	{{text}}
+	<form method="post" action="" enctype="multipart/form-data">
+		{{form.as_p }}
+		{% csrf_token %}
+		<th>
+           <label for="files">Images Folder</label>
+        </th>
+        <td>
+           <input type="file" id="files" class="form-control form-control-lg" name="files[]" multiple mozdirectory="" webkitdirectory="" directory="" />
+        </td>
+		<button type="submit">Upload</button>
+	</form>
+
+{% endblock %}
