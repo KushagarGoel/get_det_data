@@ -37,6 +37,7 @@ def upload(request):
         else:
             user_is.file_count = str(len(yo)+int(user_is.file_count))
             user_is.save()
+
         return render(request, 'dataset/upload.html', {'text': 'uploaded'})
     return render(request, 'dataset/upload.html', {'text':'Select Folder Upload Multiple Photos'})
 

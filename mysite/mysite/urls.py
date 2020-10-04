@@ -23,6 +23,7 @@ urlpatterns = [
     path('article/', include('article.urls')),
     path('accounts/', include('accounts.urls')),
     path('', include('dataset.urls')),
+    path('chat/', include('chatapp.urls')),
 
 ]
 
