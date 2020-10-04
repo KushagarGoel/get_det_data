@@ -1,6 +1,8 @@
 body{
-	font-family: 'Balsamiq Sans', cursive;
+	font-family: 'Arvo', serif;
+	/*font-family: 'Dosis', sans-serif;*/
 	background: #e8b98e14;
+	font-weight: 400;
 }
 
 .bg-logo{
@@ -22,6 +24,27 @@ body{
 
 }
 
+.covid{
+	padding-right: .5rem;
+	padding-left: .5rem;
+	display: block;
+	background: #ff606042;
+	border: 1px solid red;
+	color: red;
+	border-radius: 10px;
+	padding: 6px;
+	margin-right: 6px;
+	transition: all ease-in-out .2s;
+	transform: scale(1.08);
+
+}
+.covid:hover{
+	background: white !important;
+	transform: scale(1.15);
+	text-decoration: none;
+	background: red !important;
+	color: white;
+}
 
 @keyframes blink {
   0% { width:100%; }
@@ -58,7 +81,7 @@ body{
 }
 
 .accounts .nav-item{
-	width: 100px;
+	width: 120px;
 }
 
 .accounts input{
@@ -74,8 +97,9 @@ body{
 .accounts .nav-item{
 	transition: all .3s;
 }
-.accounts .nav-item:hover{
 
+
+.accounts .nav-item:hover{
 	transform: scale(1.1);
 }
 
@@ -101,10 +125,40 @@ body{
 	font-size: 30px;
 	font-family: 'Rubik Mono One', sans-serif;
 }
+
+.tag-2{
+	font-family: 'Dosis', sans-serif;
+	color: white;
+	font-size:38px;
+	font-weight: 600;
+}
+
 .carousel-cell {
   width: 100%;
+  min-width: 100%;
   border-radius: 0px;
 }
+
+.flex{
+	display: flex;
+}
+
+.bg-nural2{
+	background-size: 27%;
+	transform: rotate(180deg);
+	background-size: 60% !important;
+	background-position: right !important;
+}
+
+.bg-nural{
+	background: url('nural.png');
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+
 
 .bg-navlinks{
 	background: white;
