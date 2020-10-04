@@ -6,6 +6,7 @@
     <title>Title</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Courier+Prime:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Dosis:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
 
 
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -18,8 +19,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'common.css' %}">
 </head>
 <body class="">
-<div class="navbar m-auto h-100 navbar-expand-lg border-bottom">
-	<div class="container h-100">
+<div class="navbar m-auto h-100 navbar-expand border-bottom">
+	<div class="container-fluid h-100">
 		<div class="collapse navbar-collapse navbar-right">
 			<ul class="accounts navbar-nav ml-auto">
 				{% if user.is_authenticated %}
@@ -49,7 +50,7 @@
 		</div>
 		<div class="col-sm-8 bg-navlinks">
 			<div class="m-auto h-100">
-				<nav class="navbar m-auto h-100 navbar-expand-lg">
+				<nav class="navbar m-auto h-100 navbar-expand-md">
 					<div class="container">
 					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					    <span class="navbar-toggler-icon"></span>
@@ -57,39 +58,18 @@
 
 					  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 					    <ul class="navbar-nav navbar-right">
-					      <li class="nav-item active">
-					        <a class="nav-link" href="">Orders</a>
+					      <li class="nav-item">
+					        <a class="nav-link" href="">About</a>
 					      </li>
-					      <li class="nav-item active">
-					        <a class="nav-link" href="">All Artists</a>
+					      <li class="nav-item">
+					        <a class="nav-link" href="">Contact Us</a>
 					      </li>
-					        <li class="nav-item active">
-					        <a class="nav-link" href="">Cart 
-					        </a>
+					        <li class="nav-item">
+					        <a class="nav-link" href="">Features</a>
 					      </li>
-					          {% if user.is_authenticated %}
-					      <li class="nav-item dropdown">
-					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					          Dropdown link
-					        </a>
-					        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					          <a class="dropdown-item" href="">Account</a>
-					          <a class="dropdown-item" href="">Logout</a>
-					        </div>
+					      <li class="nav-item">
+					        <a class="covid" href="">About Covid</a>
 					      </li>
-
-					        {% else %}
-
-					         <li class="nav-item dropdown">
-					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					          Dropdown link
-					        </a>
-					        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					          <a class="dropdown-item" href="">Login</a>
-					          <a class="dropdown-item" href="">Register</a>
-					        </div>
-					      </li>
-					        {% endif %}
 					    </ul>
 
 					  </div>

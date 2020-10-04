@@ -3,58 +3,72 @@
 
 {% block content %}
 <div class="main-carousel h-100vh"  data-flickity='{ "selectedAttraction": 0.01,
-"friction": 0.15, "cellAlign": "left","prevNextButtons": false , "autoPlay": true, "wrapAround": true, "pageDots": false }'>
-  	<div class="carousel-cell bg-white h-100 rounded">
+"friction": 0.15, "cellAlign": "left", "prevNextButtons": false , "autoPlay": true, "wrapAround": true, "pageDots": false }'>
+  	<div class="carousel-cell bg-white h-100">
 		<div class="container-fluid h-100">
-			<div class="row h-100">
-				<div class="bg-body-match col-sm-8 h-100">
-					<div class="p-5 h-100">
-						<div class="m-auto">
-							<h3 class="tag-1">Cool Website for Cool Machile Learners and Teachers Out there.........:)</h3>
+			<div class="bg-body-match row h-100">
+				<div class="col-sm-8 flex">
+					<div class="p-5 m-auto">
+						<div class="m-auto text-center">
+							<h3 class="tag-1">Cool Website for Cool Machine Learners and Teachers Out there.........:)</h3>
 						</div>
-						<div class="m-auto">
-							<img src="{% static 'data-server.svg' %}" width="200px" height="100px">
+						<div class="mt-5 mb-4 text-center">
+							<img class="" src="{% static 'data-server.svg' %}" width="200px" height="100px">
+						</div>
+						<div class="text-center mt-5">
+							<small class="tag-1 mt-3" style="font-size:15px;">That's data spinning up there 😜</small>
 						</div>
 					</div>
 				</div>
-				<div class="bg-body col-sm-4 h-100">
-
+				<div class="bg-body col-sm-4 h-100 flex">
+					<div class="m-auto text-center p-5">
+						<h2 class="tag-2">Jokes apart, this is a serious website where you can get any(and by any I actually mean ANY) dataset that you have always desired for.</h2>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>	
-	<div class="carousel-cell bg-white h-100 rounded">
+
+
+
+
+	<div class="carousel-cell bg-white h-100">
 		<div class="container-fluid h-100">
 			<div class="row h-100">
-				<div class="bg-body col-sm-8 h-100">
-					<h1>Hello</h1>
+				<div class="flex bg-body col-sm-8 h-100">
+					<div class="m-auto text-center">
+						<h5 class="tag-1">Browser Datasets</h5>
+						<button class="btn btn-dark">Get Started</button><br>
+						<small style="color:white;" class="">Never limit your ML projects because you can't find a dataset again.</small>
+					</div>
 				</div>
-				<div class="bg-white col-sm-4 h-100">
+				<div class="bg-white flex col-sm-4 h-100">
+					<div class="m-auto bg-nural">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="carousel-cell bg-white h-100">
+		<div class="container-fluid h-100">
+			<div class="row h-100">
+				<div class="bg-white flex col-sm-8 h-100">
+					<div class="m-auto bg-nural bg-nural2">
+					</div>
+				</div>
+				<div class="bg-body flex col-sm-4 h-100">
 
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="carousel-cell bg-white h-100 rounded">
+	<div class="carousel-cell bg-white h-100">
 		<div class="container-fluid h-100">
 			<div class="row h-100">
-				<div class="bg-white col-sm-8 h-100">
+				<div class="bg-body flex col-sm-8 h-100">
 					<h1>Hello</h1>
 				</div>
-				<div class="bg-body col-sm-4 h-100">
-
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="carousel-cell bg-white h-100 rounded">
-		<div class="container-fluid h-100">
-			<div class="row h-100">
-				<div class="bg-body col-sm-8 h-100">
-					<h1>Hello</h1>
-				</div>
-				<div class="bg-body-match col-sm-4 h-100">
-
+				<div class="bg-body-match flex col-sm-4 h-100">
 				</div>
 			</div>
 		</div>
