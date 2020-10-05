@@ -5,6 +5,64 @@ body{
 	font-weight: 400;
 }
 
+.footer{
+	background:#3e3b3b;
+	color: white;
+	padding-top:100px;
+	padding-bottom:100px;
+}
+
+#logo-par{
+	transition: all ease-in-out .3s;
+}
+
+
+#navbar{
+	transition: all ease-in-out .3s;
+}
+
+.section1{
+	padding: 20px;
+}
+
+.section2{
+	padding: 20px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: white;
+}
+.section3{
+	padding: 20px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+
+.tada{
+}
+
+.tada .t1{
+	height: 6px;
+	width: 40px;
+	transform: rotate(30deg);
+	background: white;
+	animation: stack 1s infinite;
+}
+.tada .t2{
+	height: 6px;
+	width: 40px;
+	transform: rotate(-30deg);	
+	background: #ff8d27;
+	animation: stack 1s infinite;
+}
+
+@keyframes stack {
+  0% { margin-bottom:0px;  }
+  50% { margin-bottom:7px; }
+  100% { margin-bottom:0px;  }
+
+}
+
 .bg-logo{
 	background: #FF8D27;
 }
@@ -22,6 +80,10 @@ body{
 	margin-top: 100px;
 	animation: blink infinite 30s;
 
+}
+
+.white{
+	color: white;
 }
 
 .covid{
@@ -151,7 +213,7 @@ body{
 }
 
 .bg-nural{
-	background: url('nural.png');
+	background: url('nural.webp');
 	height: 100%;
 	width: 100%;
 	background-repeat: no-repeat;
