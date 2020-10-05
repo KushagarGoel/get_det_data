@@ -30,9 +30,6 @@
 								<div class="t1"></div>	
 							</div>
 						</div>
-						<div class="text-center mt-5">
-							<small class="tag-1 mt-3" style="font-size:15px;">That's data spinning up there 😜</small>
-						</div>
 					</div>
 				</div>
 				<div class="bg-body col-sm-4 h-100 flex">
@@ -53,7 +50,7 @@
 				<div class="flex bg-body col-sm-8 h-100">
 					<div class="m-auto text-center">
 						<h5 class="tag-1">Browser Datasets</h5>
-						<button class="btn btn-dark">Get Started</button><br>
+						<a href="/datasets" class="btn btn-dark">Browse</a><br>
 						<small style="color:white;" class="">Never limit your ML projects because you can't find a dataset again.</small>
 					</div>
 				</div>
@@ -89,7 +86,7 @@
 					<div class="m-auto">
 						<div class="mt-5 text-center">
 							<h5 class="tag-1 white">Create New Datasets</h5>
-							<button class="btn btn-dark">Create</button><br>
+							<a href="/upload" class="btn btn-dark">Create</a><br>
 							<small class="white">Have an idea, but can find datasets create your own and see it growing with the community support of like minded people.</small>
 						</div>
 					</div>
@@ -119,10 +116,10 @@
 </div>
 <div class="section2">
 	<div class="container">
-		<div class="row">
+		<div class="row" data-aos="fade-up">
 			<h3>What you will find Here?</h3>
 		</div><br>
-		<div class="row">
+		<div class="row" data-aos="fade-up" data-aos-delay="500">
 			<div class="contri-explained">
 				<p>These days AI/ML is into everyfield of the life, either its business, science, medical or in professional works for predictions about variouos aspects and the limit is only ones imagination. We at <span class="company"></span> provide you opportunity to do things mentioned below:</p>
 				<ul>
@@ -152,10 +149,10 @@
 
 <div class="section3">
 	<div class="container">
-		<div class="row">
+		<div class="row" data-aos="fade-in">
 			<h3>Benefits Of Contributions?</h3>
 		</div><br>
-		<div class="row">
+		<div class="row" data-aos="fade-in" data-aos-delay="500">
 			<div class="contri-explained">
 				<p>In this world we all work to make our lives as well as others life better, and with the growth of technology our lives have changed manyfolds. Machine learning have a lot of potential and what it needs is data, that we people are generating everyday and in tons of GBs, give it in the right hands and help in the advancements of the future technologies.</p>
 				<ul>
@@ -173,6 +170,35 @@
 		</div>
 	</div>
 </div>
+<div class="section2">
+	<div class="container">
+		<div class="row mt-5">
+			<div class="m-auto" data-aos="fade-up">
+				<h3>Some Popular Libraries</h3>
+			</div>
+		</div>
+		<div class="row pt-5 pb-4" data-aos="fade-up" data-aos-delay="500">
+			<div class="m-auto">
+				<a href="https://www.tensorflow.org" target="blank"><img class="img-fluid" src="{% static 'Tensorflow_logo.png' %}" width="100"></a>
+			</div>
+			<div class="m-auto">
+				<a href="https://keras.io" target="blank"><img class="img-fluid" src="{% static 'keras.png' %}" width="100"></a>
+			</div>
+			<div class="m-auto">
+				<a href="https://pytorch.org" target="blank"><img class="img-fluid" src="{% static 'pytourch.png' %}" width="100"></a>
+			</div>
+			<div class="m-auto">
+				<a href="https://opencv.org" target="blank"><img class="img-fluid" src="{% static 'opencv.png' %}" width="100"></a>
+			</div>
+			<div class="m-auto">
+				<a href="https://scikit-learn.org/stable/" target="blank"><img class="img-fluid" src="{% static 'scikit.png' %}" width="100"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 <script>
    var company = '<span style="color:#ff8d27">Soft</span><span style="color:#3e3b3b;">Fuel</span>';
    var k = document.getElementsByClassName('company')

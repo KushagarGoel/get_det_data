@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-	path('contribute/', views.upload, name="contribute"),
+	path('upload/', views.upload, name="contribute"),
 	path('', views.home, name="home"),
     path('datasets/', views.all_dataset, name="all_datasets"),
     re_path(r'^datasets/(?P<title>.*)/', views.single, name="single_dataset")

@@ -36,6 +36,8 @@ def upload(request):
 def all_dataset(request):
     all_datasets = Dataset.objects.all()
     context = {'all':all_datasets}
+    if len(all_datasets)==0:
+        context = {'all':[{'title':'No Available'}]}
     return render(request, 'dataset/all_dataset.html', context)
 
 def single(request, title):
