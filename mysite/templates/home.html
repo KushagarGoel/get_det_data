@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 <div class="main-carousel h-100vh"  data-flickity='{ "selectedAttraction": 0.01,
 "friction": 0.15, "cellAlign": "left", "prevNextButtons": false , "autoPlay": true, "wrapAround": true, "pageDots": false }'>
@@ -12,8 +11,24 @@
 						<div class="m-auto text-center">
 							<h3 class="tag-1">Cool Website for Cool Machine Learners and Teachers Out there.........:)</h3>
 						</div>
-						<div class="mt-5 mb-4 text-center">
-							<img class="" src="{% static 'data-server.svg' %}" width="200px" height="100px">
+						<div class="mt-5 mb-4 flex text-center">
+							<div class="tada m-auto">
+								<div class="t1"></div>	
+								<div class="t2"></div>	
+								<div class="t1"></div>	
+								<div class="t2"></div>	
+								<div class="t1"></div>	
+								<div class="t2"></div>	
+							</div>
+							<img class="m-auto" src="{% static 'data-server.svg' %}" width="200px" height="100px">
+							<div class="tada m-auto">
+								<div class="t2"></div>	
+								<div class="t1"></div>	
+								<div class="t2"></div>	
+								<div class="t1"></div>	
+								<div class="t2"></div>	
+								<div class="t1"></div>	
+							</div>
 						</div>
 						<div class="text-center mt-5">
 							<small class="tag-1 mt-3" style="font-size:15px;">That's data spinning up there 😜</small>
@@ -54,10 +69,15 @@
 			<div class="row h-100">
 				<div class="bg-white flex col-sm-8 h-100">
 					<div class="m-auto bg-nural bg-nural2">
+						<div class="mt-5 text-center" style="transform:rotate(180deg)">
+							<h5 class="tag-1" style="color:black;">Contribute to Datasets</h5>
+							<button class="btn btn-dark">Contribute</button><br>
+							<small class="">Saw Interesting dataset and you wish to contribute and earn Respect in community? Then what stops you....Go Ahead</small>
+						</div>
 					</div>
 				</div>
 				<div class="bg-body flex col-sm-4 h-100">
-
+					<img class="img-fluid m-auto" src="{% static 'contribute.webp' %}" width="80%">
 				</div>
 			</div>
 		</div>
@@ -66,13 +86,99 @@
 		<div class="container-fluid h-100">
 			<div class="row h-100">
 				<div class="bg-body flex col-sm-8 h-100">
-					<h1>Hello</h1>
+					<div class="m-auto">
+						<div class="mt-5 text-center">
+							<h5 class="tag-1 white">Create New Datasets</h5>
+							<button class="btn btn-dark">Create</button><br>
+							<small class="white">Have an idea, but can find datasets create your own and see it growing with the community support of like minded people.</small>
+						</div>
+					</div>
 				</div>
 				<div class="bg-body-match flex col-sm-4 h-100">
+					<img class="img-fluid m-auto" src="{% static 'programmers.webp' %}" width="80%">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="section1">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 p-5 m-auto">
+				<div class="problem-explanation text-center">
+					<p>Have a very unique idea but when you try that out you can't find the related data online, or have a great idea but don't know where to start or how to start, or want someone else to do some machine learning based on your requirements??</p>
+				</div>
+			</div>
+			<div class="col-md-4 p-5 m-auto">
+				<div class="problem-ans text-center">
+					<h3>At <span class="company"></span> we have got all these points covered</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section2">
+	<div class="container">
+		<div class="row">
+			<h3>What you will find Here?</h3>
+		</div><br>
+		<div class="row">
+			<div class="contri-explained">
+				<p>These days AI/ML is into everyfield of the life, either its business, science, medical or in professional works for predictions about variouos aspects and the limit is only ones imagination. We at <span class="company"></span> provide you opportunity to do things mentioned below:</p>
+				<ul>
+					<li>
+						<h6>Search Dataset according to your requirement.</h6>
+					</li>
+					<li>
+						<h6>Get Dataset based on classified categories i.e. medical, science, dailylife etc. </h6>
+					</li>
+					<li>
+						<h6>Connect with people having greater experience.</h6>
+					</li>
+					<li>
+						<h6>Get real and trusted data from around the world for your Topis by posting new Dataset post.</h6>
+					</li>
+					<li>
+						<h6>Become a Data Provider at <span class="company"></span>.</h6>
+					</li>
+					<li>
+						<h6>Ask our smart system to predict a suitable algorithm for your datasets(extremely helpful for beginers and available only at <span class="company"></span>).</h6>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
+<div class="section3">
+	<div class="container">
+		<div class="row">
+			<h3>Benefits Of Contributions?</h3>
+		</div><br>
+		<div class="row">
+			<div class="contri-explained">
+				<p>In this world we all work to make our lives as well as others life better, and with the growth of technology our lives have changed manyfolds. Machine learning have a lot of potential and what it needs is data, that we people are generating everyday and in tons of GBs, give it in the right hands and help in the advancements of the future technologies.</p>
+				<ul>
+					<li>
+						<h6>Better data for everyone</h6>
+					</li>
+					<li>
+						<h6>Your Profile gets stonger as <span class="company"></span> Data Provider</h6>
+					</li>
+					<li>
+						<h6>More Contributions Better data for everyone</h6>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+   var company = '<span style="color:#ff8d27">Soft</span><span style="color:#3e3b3b;">Fuel</span>';
+   var k = document.getElementsByClassName('company')
+   for(let i=0;i<k.length;i++){
+   	k[i].innerHTML = company;
+   }
+</script>
 {% endblock %}
+

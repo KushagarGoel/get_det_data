@@ -18,6 +18,8 @@ class Dataset(models.Model):
     featured = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    chatroom_count = models.IntegerField(default=0)
+
 
     def __str__(self):
         return self.title
