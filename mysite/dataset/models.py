@@ -18,13 +18,9 @@ class Dataset(models.Model):
     featured = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-    description = models.TextField( default = "yo")
 
     def __str__(self):
         return self.title
-
-    def get_absolute_url(self):
-        return '/datasets/%s'%(self.title)
 
 
 class Contributor(models.Model):

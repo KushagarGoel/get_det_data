@@ -1,7 +1,6 @@
 from django.contrib.auth import logout, login, authenticate
 from django.shortcuts import render, HttpResponseRedirect,Http404
 from django.urls import reverse
-
 from .forms import LoginForm, RegistrationForm
 import re
 from .models import EmailConfirmed
@@ -25,8 +24,11 @@ def login_view(request):
         if user:
             login(request,user)
             messages.success(request, "Successfully Logged in")
+            redirect = str(request.GET['next'])
+            if redirect:
+                return HttpResponseRedirect(request.GET['next'])
             return HttpResponseRedirect('/')
-    context = {"form": form, 'btn':btn}
+    context = {"form": form}
     return render(request, "form.html",context)
 
 

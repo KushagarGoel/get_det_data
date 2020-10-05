@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
+    <title>Soft Fuel | ML and AI</title>
+    <link rel="icon" href="{% static 'logoicon-best3.webp' %}">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Courier+Prime:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Dosis:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
 
@@ -41,14 +41,14 @@
 </div>
 <div class="container-fluid nav-bor sticky-top">
 	<div class="row">
-		<div class="col-sm-4 bg-logo">
+		<div id="logo-par" class="col-sm-4 bg-logo">
 			<a href="/">
 				<div class="m-auto text-center p-1">
-					<img src="{% static 'logo.png' %}" width="230" id="logo" class="img-fluid m-auto">
+					<img src="{% static 'logo.webp' %}" width="230" id="logo" class="img-fluid m-auto">
 				</div>
 			</a>
 		</div>
-		<div class="col-sm-8 bg-navlinks">
+		<div id="navbar" class="col-sm-8 bg-navlinks">
 			<div class="m-auto h-100">
 				<nav class="navbar m-auto h-100 navbar-expand-md">
 					<div class="container">
@@ -97,6 +97,8 @@
 </div>
 {% block content %}
 {% endblock %}
+
+{% include 'footer.html' %}
 </body>
 
 
@@ -106,6 +108,8 @@
 <script>
 
 logo = document.getElementById("logo")
+logopar = document.getElementById("logo-par")
+navbar = document.getElementById("navbar")
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 console.log(logo)
@@ -114,8 +118,17 @@ console.log(logo)
 function scrollFunction() {
   if (document.documentElement.scrollTop > 100) {
     logo.style.width = "180px";
+
+    logopar.classList.add('col-sm-2')
+    navbar.classList.add('col-sm-10')
+    logopar.classList.remove('col-sm-4')
+    navbar.classList.remove('col-sm-8')
   } else {
   	logo.style.width = "230px";
+    logopar.classList.add('col-sm-4')
+    navbar.classList.add('col-sm-8')
+    logopar.classList.remove('col-sm-2')
+    navbar.classList.remove('col-sm-10')
   }
 }
 
