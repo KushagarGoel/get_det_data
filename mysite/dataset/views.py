@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 
 from .models import Contributor, Dataset, ContributrFolder
 
@@ -15,15 +15,7 @@ def upload(request):
     if request.method == "POST":
         updatedImages = request.FILES.getlist('files[]')
         dataset_name = Dataset.objects.all()[0] #abhi yahi hai
-        ls = []
-        for i in updatedImages:
-            if i.name.split(".")[-1] in ['png', 'jpg', 'jpeg']:
-                ls.append(Contributor(username=request.user,dataset_name=dataset_name,file=i))
-        Contributor.objects.bulk_create(ls)
-        print(updatedImages, request.FILES)
 
-        updatedImages = request.FILES.getlist('files[]')
-        dataset_name = Dataset.objects.all()[0] #abhi yahi hai
         ls = []
         for i in updatedImages:
             if i.name.split(".")[-1] in ['png', 'jpg', 'jpeg']:
@@ -41,3 +33,14 @@ def upload(request):
         return render(request, 'dataset/upload.html', {'text': 'uploaded'})
     return render(request, 'dataset/upload.html', {'text':'Select Folder Upload Multiple Photos'})
 
+def all_dataset(request):
+    all_datasets = Dataset.objects.all()
+    context = {'all':all_datasets}
+    return render(request, 'dataset/all_dataset.html', context)
+
+def single(request, title):
+    try:
+        data = Dataset.objects.get(title = title)
+    except:
+        return HttpResponseRedirect('/')
+    return render(request, 'dataset/single.html', {'data':data})
