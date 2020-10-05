@@ -4,6 +4,7 @@
 
 {% for datas in all %}
 <a href="{{ datas.get_absolute_url }}">{{datas.title}}</a><br>
+<a href="{{ datas.get_contribute_url }}">Contribute</a><br>
 {{datas.timestamp}}
 {{datas.description|truncatewords:10}}
 {% for cat in datas.category_selected.all %}
