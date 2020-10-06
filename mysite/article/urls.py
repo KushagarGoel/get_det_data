@@ -5,7 +5,11 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', views.yo, name="yo"),
+    path('', views.create_article, name="create_article"),
+    path('view_all/', views.view_article, name="view_article"),
+    re_path('view_all/(?P<title>.*)/', views.single, name = 'article_single')
+
+
 ]
 
 
