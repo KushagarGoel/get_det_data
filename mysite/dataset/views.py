@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponseRedirect
 
 from .models import Contributor, Dataset, ContributrFolder
@@ -12,7 +13,7 @@ def home(request):
 
 
 
-
+@login_required(redirect_field_name='next')
 def upload(request, title):
     try:
         dataset_name = Dataset.objects.get(title=title)
@@ -59,25 +60,29 @@ def all_dataset(request):
     context = {'all':all_datasets}
     if len(all_datasets)==0:
         context = {'all':[{'title':'No Available'}]}
-    return render(request, 'dataset/all_dataset.html', context)
+    return render(request, 'dataset/test_all.html', context)
 
 
 
-
+@login_required(redirect_field_name='next')
 def single(request, title):
     try:
         data = Dataset.objects.get(title = title)
     except:
         return HttpResponseRedirect('/')
-    shutil.make_archive('..\static\media\zip\%s'%(title), 'zip', '..\static\media\datasets\%s'%(title))
+    try:
+        shutil.make_archive('../static/media/zip/%s'%(title), 'zip', '../static/media/datasets/%s'%(title))
+    except:
+        pass
     return render(request, 'dataset/single.html', {'data':data})
 
+@login_required(redirect_field_name='next')
 def create_dataset(request):
     form = CreateDataset(request.POST or None)
     if form.is_valid():
         title = form.cleaned_data['title']
         form.save(commit=False)
-        form.username = request.user
+        form.instance.username = request.user
         form.save()
         return HttpResponseRedirect('/contribute/%s'%(title))
     return render(request, 'dataset/create.html',{'form':form})
