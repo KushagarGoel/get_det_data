@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.shortcuts import render, HttpResponseRedirect
-
+from category.models import Category
 from .models import Contributor, Dataset, ContributrFolder
 from .forms import CreateDataset
 import os
@@ -56,7 +56,8 @@ def upload(request, title):
 
 def all_dataset(request):
     all_datasets = Dataset.objects.all()
-    context = {'all':all_datasets}
+    cats = Category.objects.all()
+    context = {'all':all_datasets, 'cats': cats}
     if len(all_datasets)==0:
         context = {'all':[{'title':'No Available'}]}
     return render(request, 'dataset/all_dataset.html', context)
@@ -69,7 +70,7 @@ def single(request, title):
         data = Dataset.objects.get(title = title)
     except:
         return HttpResponseRedirect('/')
-    shutil.make_archive('..\static\media\zip\%s'%(title), 'zip', '..\static\media\datasets\%s'%(title))
+    shutil.make_archive('../static/media/zip/%s'%(title), 'zip', '../static/media/datasets/%s'%(title))
     return render(request, 'dataset/single.html', {'data':data})
 
 def create_dataset(request):

@@ -1,14 +1,253 @@
 {% extends 'base.html' %}
 {% block content %}
 	
-
-{% for datas in all %}
-<a href="{{ datas.get_absolute_url }}">{{datas.title}}</a><br>
-<a href="{{ datas.get_contribute_url }}">Contribute</a><br>
-{{datas.timestamp}}
-{{datas.description|truncatewords:10}}
-{% for cat in datas.category_selected.all %}
-{{cat}}
-{% endfor %}<br>
-{% endfor %}
+<div class="container-fluid">
+	<div class="flex">
+		<div class="sidebar">
+			<div class="cats">
+				<ul>
+					{% for cat in cats %}
+						{% if cat.active_fields %}
+						<li>{{cat.category_name}}</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="mainAll">
+			<div class="row">
+				{% for datas in all %}
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 p-3">
+						<div class="cus_card pl-5 pr-5 pt-3 pb-3 h-100">
+							<h3><a class="float-left" href="{{ datas.get_absolute_url }}">{{datas.title}}</a></h3>
+							{% for cat in datas.category_selected.all %}
+								<small class="float-right">Category:{{cat}}</small><br>
+							{% endfor %}
+							<hr>
+							<div class="row">
+								<div class="col-sm-7">
+									<p>{{datas.description|truncatewords:5}}</p>
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+								</div>
+								<div class="col-sm-5">
+									<h6>Created Time:{{datas.timestamp}}</h6>
+									<code>Created By: {{datas.username}}</code>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
