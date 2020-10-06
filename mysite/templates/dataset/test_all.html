@@ -56,11 +56,19 @@
   background: #222;
   transition: 0.5s;
   z-index: 1;
+  color:#ff8d27;
   }
 
   .card:hover .imgBx
   {
     bottom: 80px;
+    background:#ff8d27;
+    color:#222222;
+  }
+
+   .card:hover .imgBx .wh
+  {
+    opacity:0;
   }
 
   .card .imgBx img{
@@ -110,11 +118,12 @@
 
        <div class="card">
          <div class="imgBx">
-             <h1 style="color:white;">{{datas.title}}</h1>
-             <h2> <span style="color:white;">{% for cat in datas.category_selected.all %}
+             <h1>{{datas.title}}</h1>
+             <h2> <span >{% for cat in datas.category_selected.all %}
                             {{cat}}
                             {% endfor %}
                         </span></h2>
+             <div class="wh">{{datas.description|truncatewords:4}}</div>
 
          </div>
          <div class="details">
