@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponseRedirect
-
+from category.models import Category
 from .models import Contributor, Dataset, ContributrFolder
 from .forms import CreateDataset
 import os
@@ -56,8 +56,12 @@ def upload(request, title):
     return render(request, 'dataset/upload.html', {'text':'Select Folder Upload Multiple Photos', 'dataset':dataset_name})
 
 def all_dataset(request):
-    all_datasets = Dataset.objects.all()
-    context = {'all':all_datasets}
+    cats = Category.objects.all()
+    all_datasets = []
+    for cat in cats:
+        all_datasets.append(Dataset.objects.filter(category_selected=cat))
+    print(all_datasets)
+    context = {'all':all_datasets, 'cats': cats}
     if len(all_datasets)==0:
         context = {'all':[{'title':'No Available'}]}
     return render(request, 'dataset/test_all.html', context)
@@ -69,11 +73,8 @@ def single(request, title):
     try:
         data = Dataset.objects.get(title = title)
     except:
-        return HttpResponseRedirect('/')
-    try:
-        shutil.make_archive('../static/media/zip/%s'%(title), 'zip', '../static/media/datasets/%s'%(title))
-    except:
-        pass
+        return HttpResponseRedirect('/')    
+    shutil.make_archive('../static/media/zip/%s'%(title), 'zip', '../static/media/datasets/%s'%(title))
     return render(request, 'dataset/single.html', {'data':data})
 
 @login_required(redirect_field_name='next')

@@ -24,10 +24,11 @@ def login_view(request):
         if user:
             login(request,user)
             messages.success(request, "Successfully Logged in")
-            redirect = str(request.GET['next'])
-            if redirect:
+            try:
+                request.GET['next']
                 return HttpResponseRedirect(request.GET['next'])
-            return HttpResponseRedirect('/')
+            except:
+                return HttpResponseRedirect('/')
     context = {"form": form}
     return render(request, "form.html",context)
 
