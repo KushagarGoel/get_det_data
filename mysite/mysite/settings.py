@@ -104,7 +104,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+CKEDITOR_CONFIGS = {
+    'default': {
 
+        'height': '600',
+
+        'toolbarCanCollapse': False,
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

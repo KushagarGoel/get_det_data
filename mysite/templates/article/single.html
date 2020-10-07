@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container">
 
-{{obj}}
+{{obj.article_data|safe}}
 
     <form method="POST" action="">{% csrf_token %}
 	{{form.as_p}}

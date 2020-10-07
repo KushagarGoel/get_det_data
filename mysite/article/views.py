@@ -8,6 +8,8 @@ from datetime import datetime
 def create_article(request):
     form = ArticleForm(request.POST or None)
     obj = Editor.objects.all()
+
+
     if form.is_valid():
         form = form.save(commit=False)
         form.username = request.user
@@ -29,9 +31,11 @@ def single(request, title):
     form = CommentForm(request.POST or None)
 
     if form.is_valid():
+
         form.save(commit=False)
         form.instance.username = request.user
         form.instance.article_id = obj
         form.save()
+
     obj_com = Comment.objects.filter(article_id = obj)
     return render(request, 'article/single.html', {'obj': obj, 'form':form, 'obj_com':obj_com})
