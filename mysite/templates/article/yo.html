@@ -62,29 +62,20 @@ a.cke_button_off:hover, a.cke_button_off:focus, a.cke_button_off:active {
 
 .btn-sub{
     position: absolute;
-    right: -20px;
+    right: -100px;
     top: 50%;
      border-radius: 50%;
 }
 
-.btn-div{
-    background: linear-gradient(45deg, #00ff1a, #170303c2, #ad7714b8, #ff0000);
-    padding: 5px;
-    border-radius: 50%;
-    width:min-content;
+
+
+.btn-blink{
+	background: yellow;
+	animation: blinks .9s infinite;
 }
 
-
-
-.blink_me {
-  animation: blinker 1s linear infinite;
-    opacity:1;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+@keyframes blinks{
+	50% {background: red;}
 }
 
 </style>
@@ -114,8 +105,8 @@ a.cke_button_off:hover, a.cke_button_off:focus, a.cke_button_off:active {
             <div style="padding:10px;">
                 {{form.article_data}}<br>
             </div>
-            <div>
-       <button type="submit" > <div class="btn-sub blink_me btn btn-warning" style="padding:20px;"> </div><div class="btn-sub" style="padding:10px;"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i></div> </button>
+            <div >
+        <button type="submit" class="btn-sub blink_me btn btn-warning btn-blink" style="color:white">Blog <i class="fa fa-paper-plane fa-lg"  aria-hidden="true"></i></button>
                     </div>
         </form>
     </div>
