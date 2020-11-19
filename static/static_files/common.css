@@ -9,6 +9,21 @@ html {
 	scroll-behavior: smooth;
 }
 
+.hid{
+	display: none;
+}
+
+
+.btn-blink{
+	background: yellow;
+	animation: blinks 1s infinite;
+}
+
+@keyframes blinks{
+	50% {background: transparent;}
+}
+
+
 .bg-cat{
 	background: black;
 	margin-bottom: 10px;
@@ -19,7 +34,7 @@ html {
 }
 
 .bg-cat:hover{
-  background: #1d1b1a4d !important;
+  /*background: white !important;*/
 }
 
 .bg-cat-head{
@@ -35,12 +50,12 @@ html {
 	margin-bottom: 20px;
 	margin-top: 40px;
 	width: 15%;
-	height: 80vh;
+	height: 70vh;
 	border-right: 1px solid #e18c31;
 }
 
 .sidebar .cat-lis{
-	color: black !important;
+	color: black;
 	transition: all ease-in-out .25s;
 }
 
@@ -51,6 +66,14 @@ html {
 	transform: scale(1.1);
 	border-left: 5px solid #e18c31;
 
+}
+
+.cat-lis-selected{
+	color: #ff8d27 !important;
+	background: black;
+	font-weight: 400;
+	transform: scale(1.1);
+	border-left: 5px solid #e18c31;
 }
 
 .cats{

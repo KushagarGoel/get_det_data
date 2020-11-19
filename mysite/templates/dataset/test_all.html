@@ -4,8 +4,23 @@
 <script>
     function scrollToCus(id){
       console.log(id)
+      var element_3 = document.getElementById(id+"here");
+      var element = document.getElementById(id+"all");
+      var btn = document.getElementById(id);
+      if(btn.classList.contains("cat-lis-selected")){
+        btn.classList.remove('cat-lis-selected');
+      } else {
+        btn.classList.add('cat-lis-selected');
+      }
 
-      var element = document.getElementById(id+"here");
+      if(element_3.classList.contains("hid")){
+        element_3.classList.remove('hid');
+        element.classList.add('hid');
+      } else {
+        element_3.classList.add('hid');
+        element.classList.remove('hid');
+      }
+
       console.log(element)
       // element.scrollIntoView({ behavior: 'instant', block: "center" });
 
@@ -50,118 +65,28 @@
                   {{cat}}
                 {% endfor %}
             </div>
-            <div class="m-auto">
-              <div class="btn btn-danger">View All</div>
-            </div>
           </div>
           <div class="box" id="{% for cat in cat_wise.0.category_selected.all %}{{cat}}here{% endfor %}">
+          {% for datas in cat_wise|slice:"0:3" %}
+            <div class="card">
+              <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
+              <div class="imgBx">
+                <h1 class="title-all">{{datas.title}}</h1>
+                <h2> <span class="cat-all">
+                  {% for cat in datas.category_selected.all %}
+                    {{cat}}
+                  {% endfor %}
+                </span></h2>
+                <div class="wh">{{datas.description|truncatewords:4}}</div>
+              </div>
+              <div class="details">
+                <h2><a href="{{ datas.get_contribute_url }}" style="color:#fe8d26;">Contribute</a><br><span><a href="{{ datas.get_absolute_url }}" class="btn" style="color:#fe8d26;">View</a></span></h2>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+          <div class="box hid" id="{% for cat in cat_wise.0.category_selected.all %}{{cat}}all{% endfor %}">
           {% for datas in cat_wise %}
-            <div class="card">
-              <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
-              <div class="imgBx">
-                <h1 class="title-all">{{datas.title}}</h1>
-                <h2> <span class="cat-all">
-                  {% for cat in datas.category_selected.all %}
-                    {{cat}}
-                  {% endfor %}
-                </span></h2>
-                <div class="wh">{{datas.description|truncatewords:4}}</div>
-              </div>
-              <div class="details">
-                <h2><a href="{{ datas.get_contribute_url }}" style="color:#fe8d26;">Contribute</a><br><span><a href="{{ datas.get_absolute_url }}" class="btn" style="color:#fe8d26; ">View</a></span></h2>
-              </div>
-            </div>
-
-
-            <div class="card">
-              <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
-              <div class="imgBx">
-                <h1 class="title-all">{{datas.title}}</h1>
-                <h2> <span class="cat-all">
-                  {% for cat in datas.category_selected.all %}
-                    {{cat}}
-                  {% endfor %}
-                </span></h2>
-                <div class="wh">{{datas.description|truncatewords:4}}</div>
-              </div>
-              <div class="details">
-                <h2><a href="{{ datas.get_contribute_url }}" style="color:#fe8d26;">Contribute</a><br><span><a href="{{ datas.get_absolute_url }}" class="btn" style="color:#fe8d26; ">View</a></span></h2>
-              </div>
-            </div>
-
-
-
-            <div class="card">
-              <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
-              <div class="imgBx">
-                <h1 class="title-all">{{datas.title}}</h1>
-                <h2> <span class="cat-all">
-                  {% for cat in datas.category_selected.all %}
-                    {{cat}}
-                  {% endfor %}
-                </span></h2>
-                <div class="wh">{{datas.description|truncatewords:4}}</div>
-              </div>
-              <div class="details">
-                <h2><a href="{{ datas.get_contribute_url }}" style="color:#fe8d26;">Contribute</a><br><span><a href="{{ datas.get_absolute_url }}" class="btn" style="color:#fe8d26; ">View</a></span></h2>
-              </div>
-            </div>
-
-
-
-            <div class="card">
-              <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
-              <div class="imgBx">
-                <h1 class="title-all">{{datas.title}}</h1>
-                <h2> <span class="cat-all">
-                  {% for cat in datas.category_selected.all %}
-                    {{cat}}
-                  {% endfor %}
-                </span></h2>
-                <div class="wh">{{datas.description|truncatewords:4}}</div>
-              </div>
-              <div class="details">
-                <h2><a href="{{ datas.get_contribute_url }}" style="color:#fe8d26;">Contribute</a><br><span><a href="{{ datas.get_absolute_url }}" class="btn" style="color:#fe8d26; ">View</a></span></h2>
-              </div>
-            </div>
-
-
-
-            <div class="card">
-              <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
-              <div class="imgBx">
-                <h1 class="title-all">{{datas.title}}</h1>
-                <h2> <span class="cat-all">
-                  {% for cat in datas.category_selected.all %}
-                    {{cat}}
-                  {% endfor %}
-                </span></h2>
-                <div class="wh">{{datas.description|truncatewords:4}}</div>
-              </div>
-              <div class="details">
-                <h2><a href="{{ datas.get_contribute_url }}" style="color:#fe8d26;">Contribute</a><br><span><a href="{{ datas.get_absolute_url }}" class="btn" style="color:#fe8d26; ">View</a></span></h2>
-              </div>
-            </div>
-
-
-
-            <div class="card">
-              <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
-              <div class="imgBx">
-                <h1 class="title-all">{{datas.title}}</h1>
-                <h2> <span class="cat-all">
-                  {% for cat in datas.category_selected.all %}
-                    {{cat}}
-                  {% endfor %}
-                </span></h2>
-                <div class="wh">{{datas.description|truncatewords:4}}</div>
-              </div>
-              <div class="details">
-                <h2><a href="{{ datas.get_contribute_url }}" style="color:#fe8d26;">Contribute</a><br><span><a href="{{ datas.get_absolute_url }}" class="btn" style="color:#fe8d26; ">View</a></span></h2>
-              </div>
-            </div>
-
-
             <div class="card">
               <h1 style="opacity:0; padding:10px;" class="title-all">{{datas.title}}</h1>
               <div class="imgBx">
@@ -182,6 +107,9 @@
         </div>
       {% endfor %}
     </div>
+
+
+
   </div>
 </div>
 {% endblock %}
