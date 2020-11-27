@@ -60,7 +60,7 @@ def all_dataset(request):
     all_datasets = []
     for cat in cats:
         all_datasets.append(Dataset.objects.filter(category_selected=cat))
-
+    print(all_datasets)
     context = {'all':all_datasets, 'cats': cats}
     if len(all_datasets)==0:
         context = {'all':[{'title':'No Available'}]}

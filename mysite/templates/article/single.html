@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-
+{% block content %}
+<div class="container">
 
 {% block addcss %}
 <style>
@@ -70,4 +71,12 @@ max-height:200px;
             </div>
         {% endfor %}
     </div>
+{% endblock %}
+
+    <form method="POST" action="">{% csrf_token %}
+	{{form.as_p}}
+	    <button type="submit">Submit</button>
+	    </form>
+    {{obj_com}}
+</div>
 {% endblock %}
