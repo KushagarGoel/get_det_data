@@ -11,10 +11,9 @@ def create_article(request):
 
 
     if form.is_valid():
-        form = form.save(commit=False)
-        form.username = request.user
+        form.instance.username = request.user
         form.save()
-        print(form.timestamp)
+
 
     return render(request,'article/yo.html',{'form':form, 'obj':obj})
 
@@ -31,11 +30,11 @@ def single(request, title):
     form = CommentForm(request.POST or None)
 
     if form.is_valid():
-
         form.save(commit=False)
         form.instance.username = request.user
         form.instance.article_id = obj
         form.save()
+        form = CommentForm()
 
     obj_com = Comment.objects.filter(article_id = obj)
     return render(request, 'article/single.html', {'obj': obj, 'form':form, 'obj_com':obj_com})

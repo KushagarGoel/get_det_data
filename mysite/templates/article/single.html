@@ -1,13 +1,73 @@
 {% extends 'base.html' %}
+
+
+{% block addcss %}
+<style>
+.heading{
+     font-size: 50px;
+    font-family: 'Arvo';
+
+}
+.cate{
+    color: #6c757d;
+}
+.comment{
+    border-width: 1px;
+    border-color: #fe8d26;
+    border-style: solid;
+    border-radius: 5px;
+    background: #d0701e14;
+    margin: 10px;
+}
+.text{
+margin:10px;
+
+}
+
+#id_comment_desc{
+border-radius:10px !important;
+max-height:200px;
+}
+
+</style>
+{% endblock %}
 {% block content %}
-<div class="container">
-
-{{obj.article_data|safe}}
-
-    <form method="POST" action="">{% csrf_token %}
-	{{form.as_p}}
-	    <button type="submit">Submit</button>
-	    </form>
-    {{obj_com}}
-</div>
+    <div class="container">
+        <div class="heading">
+            {{obj.title}}
+        </div>
+        <hr>
+        <div class="cate">
+            Categories :
+            {% for cat in  obj.category_selected.all %}
+            {{cat.category_name}},
+            {% endfor %}
+            <br>
+            {{obj.username}}
+        </div>
+        <hr>
+        <div>
+            {{obj.article_data|safe}}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">Write Comments</div>
+            <div class="col-9">
+                <form method="POST" action="">{% csrf_token %}
+                    {{form.comment_desc}}
+                    <br>
+                    <button type="submit" class="btn btn-success">Add Comment</button>
+                </form>
+            </div>
+        </div>
+        {% for obj in obj_com  %}
+            <div class="comment">
+                <div class="text">
+                    <font size="1px"> {{obj.username}} </font>
+                    <br>
+                    {{obj.comment_desc}}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

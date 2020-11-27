@@ -1,11 +1,53 @@
 {% extends 'base.html' %}
+
+{% block addcss %}
+<style>
+.incard{
+     margin: 15px;
+     border-radius: 10px;
+     color: white;
+     background: #373737;
+     font-size: 1vw;
+     text-overflow: ellipsis;
+}
+.incard:hover{
+    box-shadow: 0 .5rem 1rem rgba(100,0,0,.200)!important;
+}
+.text{
+margin:10px;
+
+}
+
+a{
+color:white !important;
+
+}
+a:hover{
+color:#ff8d27 !important;
+}
+
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="container">
-
-	{% for i in obj %}
-    <a href="{{i.title}}">{{i.title}}</a>
-
-		{{i.article_data|safe|truncatewords:10}} <br>
-	{% endfor %}
-</div>
+    <div class="container" style="margin-top:10px;">
+        <div class="row">
+            {% for i in obj %}
+                <div class=" col-3 incard" >
+                    <div class="text">
+                        <font size="1px"> {{i.username}}</font><br>
+                        <a href="{{i.title}}">
+                        <font size="5px">
+                            <div style=" font-size: 1vw;">
+                                <b>{{i.title}}</b>
+                            </div>
+                        </font>
+                            <hr>
+                        </a>
+                        <font size="1px"> {{i.timestamp}}</font>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
