@@ -46,8 +46,8 @@
         {% for cat in cats %}
           <div class="flex">
           {% if cat.active_fields %}
-              {# <a href="#{{cat.category_name}}" onClick="{scrollTo(this.id)}" class="cat-lis w-100 flex"><div class="mt-auto mb-auto mr-auto">{{cat.category_name}}</div><i style="height:min-content" class="fa fa-caret-right ml-auto mt-auto mb-auto"></i></a> #}   
-              <div onclick="scrollToCus(this.id)" id="{{cat.category_name}}" class="cat-lis w-100 flex"><div class="mt-auto mb-auto mr-auto">{{cat.category_name}}</div><i style="height:min-content" class="fa fa-caret-right ml-auto mt-auto mb-auto"></i></div>       
+              {# <a href="#{{cat.category_name}}" onClick="{scrollTo(this.id)}" class="cat-lis w-100 flex"><div class="mt-auto mb-auto mr-auto">{{cat.category_name}}</div><i style="height:min-content" class="fa fa-caret-right ml-auto mt-auto mb-auto"></i></a> #}
+              <div onclick="scrollToCus(this.id)" id="{{cat.category_name}}" class="cat-lis w-100 flex"><div class="mt-auto mb-auto mr-auto">{{cat.category_name}}</div><i style="height:min-content" class="fa fa-caret-right ml-auto mt-auto mb-auto"></i></div>
           {% endif %}
           </div>
         {% endfor %}

@@ -1,14 +1,121 @@
 {% extends 'base.html' %}
-{% block content %}
-<div class="container">
+{% block addcss %}
+<style>
+#id_title{
+    border-bottom-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+}
 
-	<form method="POST" action="">{% csrf_token %}
-	{{form.media}}
-	{{form.as_p}}
-	    <button type="submit">Submit</button>
-	    </form>
-	{% for i in obj %}
-		{{i|safe}} <br>
-	{% endfor %}
-</div>
+
+.formd{
+    border:none;
+}
+.cke_top {
+    border-bottom: none !important;
+    background : #ffbd82 !important;
+    padding: 6px 8px 2px;
+    white-space: normal;
+}
+.cke_bottom {
+    padding: 6px 8px 2px;
+    position: relative;
+    border-top: 1px solid #d1d1d1;
+    background: #f8f8f8;
+    display: none !important;
+}
+
+body.cke_editable {
+
+    border:none !important;
+    cursor: text;
+
+}
+
+a.cke_button_off:hover, a.cke_button_off:focus, a.cke_button_off:active {
+    background: #ffbd82 !important;
+    border: 1px #211f1f solid;
+    padding: 3px 5px;
+
+}
+
+#id_category_selected {
+    color: #5c81a4;
+    background: antiquewhite;
+    text-align: center;
+    height:300px;
+    overflow: hidden;
+    width:max-content;
+    margin:auto;
+}
+
+#id_category_selected:hover{
+    height:400px;
+    background: antiquewhite;
+    text-align: center;
+    transform: scale(1.1);
+    transition: all .3s;
+
+}
+
+.btn-sub{
+    position: absolute;
+    right: -100px;
+    top: 50%;
+     border-radius: 50%;
+}
+
+
+
+.btn-blink{
+	background: yellow;
+	animation: blinks .9s infinite;
+}
+
+@keyframes blinks{
+	50% {background: red;}
+}
+
+</style>
 {% endblock %}
+{% block content %}
+
+<br>
+<br>
+<div class="container">
+    <div class="card shadow">
+        <form method="POST" id="myFormID" action="">{% csrf_token %}
+
+        {{form.media}}
+
+            <br>
+            <div class="float-right ">
+                <div class="form-group" style="padding:20px;">
+                    {{form.title}}
+                </div>
+                <br>
+                <div class="form-group" style="height:400px;">
+                    {{form.category_selected}}
+                </div>
+
+
+            </div>
+            <div style="padding:10px;">
+                {{form.article_data}}<br>
+            </div>
+            <div >
+        <button type="submit" class="btn-sub btn btn-warning" style="color:white">Blog <i class="fa fa-paper-plane fa-lg"  aria-hidden="true"></i></button>
+                    </div>
+        </form>
+    </div>
+</div>
+<br><br>
+
+<script>
+    document.getElementById("id_category_selected").classList.add("form-control")
+
+</script>
+{% endblock %}
+
