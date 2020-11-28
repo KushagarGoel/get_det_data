@@ -1,10 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-	
-<h1>Create dataset</h1>
-<form method="POST" action="">{% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Add</button>
-</form>
+<style media="screen">
+	input, textarea, select{
+		border:none;
+		background:none;
+		border-bottom:1px solid black;
+		width:100%;
+	}
+</style>
+<div class="container mt-5 mb-5">
+	<div class="row">
+		<div class="col-md-7 p-3 m-auto">
+			<div class="text-center shadow bg-white rounded">
+				<form method="POST" class="pt-3 pb-4" action="">{% csrf_token %}
+					<h1 class="mt-2 mb-5">Create dataset</h1>
+					<table class="table">
+						{{form.as_table}}
+					</table>
+					<button class="btn btn-dark" type="submit">Add</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}

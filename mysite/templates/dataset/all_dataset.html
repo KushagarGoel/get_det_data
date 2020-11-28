@@ -6,81 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <title>Layered Card Hover</title>
-<style>
-  .box{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 15px;
-    margin: 0 auto;
-  }
-
-  .card{
-    position: absolute;
-    width: 250px;
-    height: 150px;
-    margin: 0 auto;
-    border-radius: 4px;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
-
-  }
-  .card:before,
-  .card:after
-  {
-    content:"";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    background: #fe8d26;
-    transition: 0.5s;
-    z-index:-1;
-  }
-  .card:hover:before{
-  transform: rotate(20deg);
-  box-shadow: 0 2px 20px rgba(0,0,0,.2);
-  background:#373737;
-  }
-  .card:hover:after{
-  transform: rotate(10deg);
-  box-shadow: 0 2px 20px rgba(0,0,0,.2);
-
-  }
-
-
-  .card .details{
-      margin-top:10px;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      height: 60px;
-      text-align: center;
-  }
-
-  .card .details h2{
-   margin: 0;
-   padding: 0;
-   font-weight: 600;
-   font-size: 20px;
-   color: #777;
-   text-transform: uppercase;
-  }
-
-  .card .details h2 span{
-  font-weight: 500;
-  font-size: 16px;
-  color: #f38695;
-  margin-top: 5px;
-   }
-
-
-</style>
-
 
 {% endblock %}
 {% block content %}
-	
+
 <div class="container-fluid">
 	<div class="flex">
 		<div class="sidebar">
@@ -107,7 +36,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -126,7 +55,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -145,7 +74,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -164,7 +93,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -183,7 +112,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -202,7 +131,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -221,7 +150,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -240,7 +169,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -259,7 +188,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -278,7 +207,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -297,7 +226,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>
@@ -316,7 +245,7 @@
 							<div class="row">
 								<div class="col-sm-7">
 									<p>{{datas.description|truncatewords:5}}</p>
-									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>			
+									<a class="btn btn-dark" href="{{ datas.get_contribute_url }}">Contribute</a>
 								</div>
 								<div class="col-sm-5">
 									<h6>Created Time:{{datas.timestamp}}</h6>

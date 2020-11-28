@@ -1,18 +1,79 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{{dataset}}<br>
-	{{text}}
-	<form method="post" action="" enctype="multipart/form-data">
-		{{form.as_p }}
-		{% csrf_token %}
-		<th>
-           <label for="files">Images Folder</label>
-        </th>
-        <td>
-           <input type="file" id="files" class="form-control form-control-lg" name="files[]" multiple mozdirectory="" webkitdirectory="" directory="" />
-        </td>
-		<button type="submit">Upload</button>
-	</form>
 
+<div class="container-fluid">
+		<div class="flex">
+			<div class="sidebar h-100" style="width: 25%;">
+				<div class="cats m-auto">
+					<div class="m-5">
+						<div class="text-center">
+							<p id="place"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mainAll m-5" style="width: 75%;">
+				<div class="row h-100">
+					<div class="col-12 h-100 m-auto">
+						<div class="m-auto" style="position:relative; padding:0; width:430px; height:430px">
+
+							<div class="grid m-auto mb-auto">
+								<div class="m-auto">
+									<h3>{{dataset}}</h3>
+									<br>
+									<h5>{{text}}</h5>
+									<form method="post" action="" enctype="multipart/form-data">
+										{{form.as_table }}
+										{% csrf_token %}
+										<input type="file" id="files" class="form-control form-control-lg" name="files[]" multiple mozdirectory="" webkitdirectory="" directory="" />
+										<div class="text-center mt-4">
+											<button type="submit" class="btn btn-dark m-auto">Upload</button>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="parent m-auto fa-spin">
+							</div>
+							<div class="parent2">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	var i = 0;
+	var txt = 'Go on! You are doing good for humanity...';
+	var speed = 50;
+	var opacity = 0;
+	var k = 0;
+	var z = 'Learn More';
+	function Getlink() {
+		opacity+=0.1;
+		k++;
+		if(opacity<=1){
+			document.getElementById("link").innerHTML+=z.charAt(k);
+			document.getElementById("link").style.opacity = opacity;
+			setTimeout(Getlink, speed);
+		}
+	}
+	function typeWriter() {
+	  if (i < txt.length) {
+	    document.getElementById("place").innerHTML += txt.charAt(i);
+			console.log(i, txt.charAt(i))
+	    i++;
+			if(i==txt.length){
+				document.getElementById("place").innerHTML += `<a id='link' style='opacity:${opacity}' href='www.google.com'>L</a>`;
+				setTimeout(Getlink, speed);
+			}
+	    setTimeout(typeWriter, speed);
+		}
+	}
+	typeWriter()
+</script>
 {% endblock %}
