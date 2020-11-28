@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% block content %}
 <div class="container">
 
 {% block addcss %}
@@ -73,7 +72,8 @@ max-height:200px;
     </div>
 {% endblock %}
 
-<<<<<<< HEAD
+    {% block <content></content> %}
+
     <form method="POST" action="">{% csrf_token %}
 	{{form.as_p}}
 	    <button type="submit">Submit</button>
@@ -81,5 +81,3 @@ max-height:200px;
     {{obj_com}}
 </div>
 {% endblock %}
-=======
->>>>>>> 55baea2eea88a2b0e8082478d8e3270ee2d0ad88
