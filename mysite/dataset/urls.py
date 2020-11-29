@@ -9,7 +9,7 @@ urlpatterns = [
     path('create/', views.create_dataset, name="create_dataset"),
 	path('', views.home, name="home"),
     path('datasets/', views.all_dataset, name="all_datasets"),
-    re_path(r'^datasets/(?P<title>.*)/', views.single, name="single_dataset")
+    re_path(r'^datasets/(?P<title>.*)/', views.single, name="single_dataset"),
 ]
 
 
