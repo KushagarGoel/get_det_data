@@ -13,6 +13,7 @@ def create_article(request):
     if form.is_valid():
         form.instance.username = request.user
         form.save()
+        return HttpResponseRedirect('view_all/')
 
     return render(request,'article/yo.html',{'form':form, 'obj':obj})
 
