@@ -1,15 +1,15 @@
 
-import keras
+# import keras
 import cv2
 from threading import Thread
 from tensorflow.keras.models import load_model
 import numpy as np
 import tensorflow as tf
 
-graph = tf.compat.v1.get_default_graph()
+# graph = tf.compat.v1.get_default_graph()
 
 print("Loading model")
-classifier = load_model("../static/media/graph-1.classifier")
+# classifier = load_model("../static/media/graph-1.classifier")
 print("Model loaded")
 def predict():
 

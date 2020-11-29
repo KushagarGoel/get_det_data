@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from .forms import ArticleForm, CommentForm
 from .models import Editor, Comment
 from datetime import datetime
@@ -11,10 +11,9 @@ def create_article(request):
 
 
     if form.is_valid():
-        form = form.save(commit=False)
-        form.username = request.user
+        form.instance.username = request.user
         form.save()
-
+        return HttpResponseRedirect('view_all/')
     return render(request,'article/yo.html',{'form':form, 'obj':obj})
 
 def view_article(request):
