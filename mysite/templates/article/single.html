@@ -51,14 +51,16 @@ max-height:200px;
         </div>
         <hr>
         <div class="row">
-            <div class="col">Write Comments</div>
-            <div class="col-9">
-                <form method="POST" action="">{% csrf_token %}
-                    {{form.comment_desc}}
-                    <br>
-                    <button type="submit" class="btn btn-success">Add Comment</button>
-                </form>
-            </div>
+          <div class="col">Write Comments</div>
+          <div class="col-9">
+            <form method="POST" action="">{% csrf_token %}
+              <div class="w-100">
+                {{form.comment_desc}}
+              </div>
+              <br>
+              <button type="submit" class="btn btn-success">Add Comment</button>
+            </form>
+          </div>
         </div>
         {% for obj in obj_com  %}
             <div class="comment">
@@ -70,6 +72,7 @@ max-height:200px;
             </div>
         {% endfor %}
     </div>
+  <script type="text/javascript">
+    document.getElementById("id_comment_desc").classList.add("w-100")
+  </script>
 {% endblock %}
-
-</div>

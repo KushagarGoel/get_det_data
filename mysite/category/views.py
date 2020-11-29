@@ -79,6 +79,7 @@ def home(request):
 
 def get_bot_response(request):
     userText = request.GET['msg']
+    print(userText)
     yo = get_response(str(userText))
     return HttpResponse(yo)
 
@@ -87,5 +88,3 @@ def get_bot_response(request):
 def MlModel(request):
     res = predict()
     return JsonResponse(res)
-
-

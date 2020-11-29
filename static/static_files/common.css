@@ -4,6 +4,38 @@ body{
 	background: #e8b98e14;
 	font-weight: 400;
 }
+.parent,
+.grid {
+  position: absolute;
+}
+.grid {
+
+	height: 100%;
+	width: 100%;
+  z-index: 10;
+	text-align: center;
+	display: grid;
+}
+#files{
+	width: 90%;
+	margin: auto;
+}
+.parent2{
+	background: #fdf9f6;
+  position: absolute;
+	margin: 10px;;
+	height: 95%;
+	width: 95%;
+  border-radius: 50%;
+}
+
+.parent{
+
+	height: 100%;
+	width: 100%;
+  background: linear-gradient( -45deg, #ff8d27, #ff8d27 49%, #3e3b3b 49%, white 51%, #3e3b3b 51% );
+  border-radius: 50%;
+}
 
 html {
 	scroll-behavior: smooth;
@@ -197,7 +229,7 @@ a:hover{
 .tada .t2{
 	height: 6px;
 	width: 40px;
-	transform: rotate(-30deg);	
+	transform: rotate(-30deg);
 	background: #ff8d27;
 	animation: stack 1s infinite;
 }
@@ -414,17 +446,16 @@ a:hover{
 
 .search{
 	background: #3e3b3b;
-	color: white;	
+	color: white;
 	border-radius: 0px 10px 10px 0px;
 }
 
 .search:hover{
 	background: #3e3b3b;
-	color: white;	
+	color: white;
 }
 
 
 .sf:hover .srch{
 	width: 200px !important;
 }
-
