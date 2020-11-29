@@ -11,8 +11,7 @@ def create_article(request):
 
 
     if form.is_valid():
-        form = form.save(commit=False)
-        form.username = request.user
+        form.instance.username = request.user
         form.save()
 
     return render(request,'article/yo.html',{'form':form, 'obj':obj})
