@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponseRedirect
+from django.http import HttpResponse, Http404
 from category.models import Category
 from .models import Contributor, Dataset, ContributrFolder
 from .forms import CreateDataset
@@ -73,9 +74,23 @@ def single(request, title):
     try:
         data = Dataset.objects.get(title = title)
     except:
-        return HttpResponseRedirect('/')    
+        return HttpResponseRedirect('/')
+    con = Contributor.objects.filter(dataset_name=data)
+    username = con[0].username
+    grouped = []
+    group = []
+    for i in con:
+        if(username==i.username):
+            group.append(i)
+        else:
+            grouped.append(group)
+            group = []
+    grouped.append(group)
+
     shutil.make_archive('../static/media/zip/%s'%(title), 'zip', '../static/media/datasets/%s'%(title))
-    return render(request, 'dataset/single.html', {'data':data})
+    return render(request, 'dataset/single.html', {'data':data, 'grouped':grouped})
+
+
 
 @login_required(redirect_field_name='next')
 def create_dataset(request):
@@ -87,4 +102,3 @@ def create_dataset(request):
         form.save()
         return HttpResponseRedirect('/contribute/%s'%(title))
     return render(request, 'dataset/create.html',{'form':form})
-
