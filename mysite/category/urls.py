@@ -5,13 +5,10 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-	re_path(r'^contribute/(?P<title>.*)/', views.upload, name="contribute"),
-    path('upload/', views.create_dataset, name="create_dataset"),
-	path('', views.home, name="home"),
-    path('datasets/', views.all_dataset, name="all_datasets"),
-    re_path(r'^datasets/(?P<title>.*)/', views.single, name="single_dataset")
+    path('', views.home, name="index"),
+    path('get/', views.get_bot_response, name='room'),
+    path('mlmodel/', views.MlModel, name='model'),
 ]
-
 
 
 if settings.DEBUG:
