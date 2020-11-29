@@ -70,12 +70,12 @@ a.cke_button_off:hover, a.cke_button_off:focus, a.cke_button_off:active {
 
 
 .btn-blink{
-	background: yellow;
-	animation: blinks .9s infinite;
+    background: yellow;
+    animation: blinks .9s infinite;
 }
 
 @keyframes blinks{
-	50% {background: red;}
+    50% {background: red;}
 }
 
 </style>
@@ -85,6 +85,7 @@ a.cke_button_off:hover, a.cke_button_off:focus, a.cke_button_off:active {
 <br>
 <br>
 <div class="container">
+<<<<<<< HEAD
   <div class="card shadow">
     <form method="POST" id="myFormID" action="">{% csrf_token %}
       {{form.media}}
@@ -106,6 +107,33 @@ a.cke_button_off:hover, a.cke_button_off:focus, a.cke_button_off:active {
       </div>
     </form>
   </div>
+=======
+    <div class="card shadow">
+        <form method="POST" id="myFormID" action="">{% csrf_token %}
+
+        {{form.media}}
+
+            <br>
+            <div class="float-right ">
+                <div class="form-group" style="padding:20px;">
+                    {{form.title}}
+                </div>
+                <br>
+                <div class="form-group" style="height:400px;">
+                    {{form.category_selected}}
+                </div>
+
+
+            </div>
+            <div style="padding:10px;">
+                {{form.article_data}}<br>
+            </div>
+            <div >
+        <button type="submit" class="btn-sub blink_me btn btn-warning " style="color:white">Blog <i class="fa fa-paper-plane fa-lg"  aria-hidden="true"></i></button>
+                    </div>
+        </form>
+    </div>
+>>>>>>> df39f2bd371d53e01f5db2c619184a046b11d1ee
 </div>
 <br><br>
 
