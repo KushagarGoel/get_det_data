@@ -4,3 +4,9 @@ django-ckeditor==6.0.0
 django-js-asset==1.2.2
 pytz==2020.1
 sqlparse==0.3.1
+keras
+tensorflow
+nltk
+scikit-learn
+numpy
+cv2
