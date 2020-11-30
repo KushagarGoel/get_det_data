@@ -3,12 +3,13 @@ from pickle import load
 from django.shortcuts import render
 
 # Create your views here.
-
+from keras.preprocessing.image import load_img
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 from django.http import JsonResponse
 from .model import predict
 import nltk
 import string
+from django.core.files.storage import default_storage
 
 
 
@@ -86,5 +87,11 @@ def get_bot_response(request):
 
 
 def MlModel(request):
-    res = predict()
-    return JsonResponse(res)
+    if request.method == "POST":
+        img = request.FILES['img']
+        file_name = "pic.jpg"
+        file_name_2 = default_storage.save(file_name, img)
+        file_url = default_storage.path(file_name_2)
+        res = predict(file_url)
+        return JsonResponse(res)
+    return render(request, 'category/predict.html')

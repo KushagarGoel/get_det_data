@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="mt-5 mb-5">
+    <div class="bg-white m-auto p-4">
+      <form class="m-auto w-auto" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Upload image to Get result: </label>
+        <input id="file" type="file" name="img" accept=".jpg, .jpeg, .png" class="border m-auto rounded p-1" >
+      </form>
+      <button type="submit" onclick="send()" class="m-auto btn btn-dark">Submit</button>
+    </div>
+  </div>
+  <div class="resp">
+    <div class="result">
+      <div class="" id="res">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function send(){
+    var FD = new FormData();
+    const file = document.getElementById('file');
+    const csrfmiddlewaretoken = document.getElementsByName('csrfmiddlewaretoken');
+    FD.append('img', file.files[0], file.files[0].name)
+    FD.append('csrfmiddlewaretoken', csrfmiddlewaretoken[0].value)
+    console.log(file.files, FD);
+
+    var url = "/category/mlmodel/"
+    fetch(
+      url, {
+        method: "POST",
+        body:FD
+      }
+    ).then(res => res.json())
+    .then(res => {
+      document.getElementById('res').innerHTML = res;
+    })
+  }
+</script>
+
+{% endblock %}
