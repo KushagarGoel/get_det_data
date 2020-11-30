@@ -3,8 +3,9 @@ from django.shortcuts import render, HttpResponseRedirect,Http404
 from django.urls import reverse
 from .forms import LoginForm, RegistrationForm
 import re
-from .models import EmailConfirmed
+from .models import EmailConfirmed, UserDetails
 from django.contrib import messages
+from dataset.models import ContributrFolder
 # Create your views here.
 
 
@@ -71,5 +72,19 @@ def activation_view(request, activation_key):
 
 def show_account(request):
     user = request.user
-    context = {'user':user}
+    if request.method == "POST":
+        fname = request.POST['fname']
+        print(fname)
+        user_details = UserDetails.objects.get(username=user.id)
+        user_details.first_name = fname
+        user_details.save()
+    try:
+        user_details = UserDetails.objects.get(username = user.id)
+
+    except:
+        user_details = UserDetails.objects.create(username = user)
+    ls = [1,2,3,4,5]
+    rating = int(user_details.rating)
+    cont = ContributrFolder.objects.get(username = user.id)
+    context = {'user_details':user_details, 'user':user, 'cont':cont, 'rating':rating, 'ls':ls}
     return render(request,'accounts/show_acc.html',context)
