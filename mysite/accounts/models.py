@@ -14,11 +14,11 @@ from django.db.models.signals import post_save
 User = get_user_model()
 
 RATING_CHOICES = (
-    (1, '1'),
-    (2, '2'),
-    (3, '3'),
-    (4, '4'),
-    (5, '5')
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5')
 )
 
 class UserDetails(models.Model):
@@ -38,7 +38,7 @@ class UserDetails(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return self.username
+        return self.username.username
 
 
 

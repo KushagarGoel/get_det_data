@@ -3,8 +3,9 @@ from django.shortcuts import render, HttpResponseRedirect,Http404
 from django.urls import reverse
 from .forms import LoginForm, RegistrationForm
 import re
-from .models import EmailConfirmed
+from .models import EmailConfirmed, UserDetails
 from django.contrib import messages
+from dataset.models import ContributrFolder
 # Create your views here.
 
 
@@ -71,5 +72,37 @@ def activation_view(request, activation_key):
 
 def show_account(request):
     user = request.user
-    context = {'user':user}
+    if request.method == "POST":
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        phn = request.POST['phn']
+        li = request.POST['li']
+        git = request.POST['git']
+        user_details = UserDetails.objects.get(username=user.id)
+        if fname is not None:
+            user_details.first_name = fname
+        if lname is not None:
+            user_details.last_name = lname
+        if phn is not None:
+            user_details.phone = phn
+        if li is not None:
+            user_details.linkedin_link = li
+        if git is not None:
+            user_details.github_link = git
+        user_details.save()
+
+        ls = [1, 2, 3, 4, 5]
+        rating = int(user_details.rating)
+        cont = ContributrFolder.objects.get(username=user.id)
+        context = {'user_details': user_details, 'user': user, 'cont': cont, 'rating': rating, 'ls': ls}
+        return render(request, 'accounts/show_acc.html', context)
+    try:
+        user_details = UserDetails.objects.get(username = user.id)
+
+    except:
+        user_details = UserDetails.objects.create(username = user)
+    ls = [1,2,3,4,5]
+    rating = int(user_details.rating)
+    cont = ContributrFolder.objects.get(username = user.id)
+    context = {'user_details':user_details, 'user':user, 'cont':cont, 'rating':rating, 'ls':ls}
     return render(request,'accounts/show_acc.html',context)
